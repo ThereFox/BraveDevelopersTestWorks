@@ -1,0 +1,167 @@
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --base-scale:calc(100vw / 75);
+    --h2-font-size:max(1em, min(2em, calc(var(--base-scale) * 2)));
+}
+a{
+    text-decoration: none;
+}
+h2{
+    font-weight: bold;
+    font-size: var(--h2-font-size);
+}
+h3{
+    font-size: calc(var(--h2-font-size)*0.8);
+    font-weight: 900;
+}
+
+
+.mainFrame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.formBlock{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    gap:1.5em;
+    background-color: rgb(211, 215, 216);
+    padding: 2.5em 2em;
+    border-radius: 15px;
+    box-shadow: -3px -3px 5px 1px rgb(229, 232, 233), 3px 3px 5px 1px rgb(151, 153, 153);
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    flex-direction: column;
+    gap:1.5em;
+}
+@media (max-width: 768px){
+    .form{
+        width: 100%;
+    }
+    .formInput{
+        width: 95%;
+    }
+}
+
+.formInputBlock{
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    gap:1em;
+    align-items: flex-start;
+    flex-direction:column;
+    
+    font-size: calc(var(--h2-font-size)*0.6);
+}
+.formInput{
+    text-align: center;
+    border-radius: 2em;
+    padding: 0.75em 1.5em;
+    font-size: calc(var(--h2-font-size)*0.5);
+    transition: all 1s;
+    border:1px solid rgb(151, 153, 153);
+}
+
+.formInput:focus{
+    background-color: black;
+    color:white;
+}
+
+
+.formBtn{
+    width: 100%;
+    border: none;
+    background: radial-gradient(40% 50%, #FAECD5, #CAE4D8);
+    padding: .75em 1em;
+    border-radius: 50px;
+    text-decoration: none;
+    color: black;
+    transition: transform 1s, color 0.5s;
+    font-size: calc(var(--h2-font-size)*0.6);
+    cursor: pointer;
+}
+.formBtn:hover{
+    color: aliceblue;
+    transform: translateY(2px);
+    background: radial-gradient(circle farthest-corner at 100px 50px, #FBF2EB, #000000);
+    animation: gradient 5s infinite linear; 
+    background-size: 400%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 80% 0%;
+    }
+    50% {
+        background-position: 20% 100%;
+    }
+    100% {
+        background-position: 80% 0%;
+    }
+}
+.ending{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+.ending svg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    left: 25%;
+    top:0%;
+}
+.ending svg path{
+    fill: transparent;
+}
+
+.ending svg.animate path,
+.ending svg.animate line{
+    animation: 1.7s ease forwards draw;
+    opacity:0;
+  }
+  
+  @keyframes draw {
+    0% {
+      opacity: 1;
+      stroke-dashoffset: -99.47578430175781;
+      fill: transparent;
+      transform: translateY(0);
+    }
+    
+    35% {
+      stroke-dashoffset: 0;
+      fill: transparent;
+    }
+    
+    60% {
+      fill: #3da35a;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    100% {
+      fill: #3da35a;
+      stroke-dashoffset: 0;
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
