@@ -1,3 +1,3 @@
 # BraveDevelopersTestWorks
 Test works from BraveDevelopers
-demo - site
+demo - site: https://therefox.github.io/OperatorsReact/
